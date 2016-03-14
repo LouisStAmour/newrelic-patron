@@ -3,7 +3,7 @@ if defined?(::Patron) and not NewRelic::Control.instance['disable_patron'] and n
     ::Patron::Session.class_eval do
       def request_with_newrelic_trace(action, url, headers, options = {})
         newrelic_host = parse_host_for_newrelic url
-        metrics = ["External/#{newrelic_host}/Faraday::Connection/#{action}", "External/#{newrelic_host}/all", "External/all"]
+        metrics = ["External/#{newrelic_host}/Patron::Connection/#{action}", "External/#{newrelic_host}/all", "External/all"]
         if NewRelic::Agent::Transaction.recording_web_transaction?
           metrics << "External/allWeb"
         else
