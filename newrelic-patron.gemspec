@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.license = "MIT"
 
   s.add_dependency(%q<patron>, ["~> 0"])
-  s.add_dependency(%q<newrelic_rpm>, ["~> 3.0"])
+  s.add_dependency(%q<newrelic_rpm>, ["> 3.0"])
 end
